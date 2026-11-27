@@ -1,24 +1,34 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Instituto Leonel Brizola</title>
 
-    <meta name="description" content="Instituto Leonel Brizola: preservando a história, promovendo o debate e construindo o futuro.">
-    <meta name="theme-color" content="#151515">
+    <meta name="description"
+          content="Instituto Leonel Brizola. Preservando a história, promovendo o debate e construindo o futuro.">
+
+    <meta name="theme-color" content="#101010">
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <style>
+
         :root {
-            --preto: #151515;
-            --vermelho: #c92335;
-            --fundo: #f5f6f8;
+            --preto: #101010;
+            --escuro: #181818;
+            --cartao: #202020;
+            --vermelho: #dc3545;
+            --vermelho-hover: #b92333;
+            --branco: #ffffff;
+            --cinza: #b5b5b5;
+            --borda: #303030;
         }
 
         * {
@@ -32,48 +42,63 @@
 
         body {
             margin: 0;
-            background: var(--fundo);
-            color: #252525;
+            background: var(--preto);
+            color: var(--branco);
             font-family: system-ui, Arial, sans-serif;
             line-height: 1.7;
         }
 
+        /* MENU */
+
         .navbar {
-            background: var(--preto);
-            padding: 16px 0;
-            border-bottom: 2px solid var(--vermelho);
+            background: #080808;
+            padding: 17px 0;
+            border-bottom: 1px solid #292929;
         }
 
         .navbar-brand {
+            color: white;
+            font-size: 1.15rem;
             font-weight: 800;
             letter-spacing: .5px;
         }
 
         .navbar-brand span {
-            color: #ed4658;
+            color: var(--vermelho);
         }
 
         .navbar-nav .nav-link {
-            color: #ddd;
+            color: #ccc;
             font-weight: 500;
             padding: 8px 14px;
+            transition: .2s;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #ed4658;
+            color: var(--vermelho);
         }
 
+        .navbar-toggler {
+            border-color: #555;
+        }
+
+        /* BANNER */
+
         .banner {
-            padding: 110px 20px;
-            color: white;
+            padding: 120px 20px;
             text-align: center;
             background:
-                radial-gradient(circle at 80% 20%, rgba(201,35,53,.2), transparent 35%),
-                linear-gradient(135deg, #151515, #343434);
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(220,53,69,.16),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #101010, #202020 65%, #111);
+            border-bottom: 1px solid #292929;
         }
 
         .banner-tag {
-            color: #ff7583;
+            color: #ed5868;
             font-size: .85rem;
             font-weight: 700;
             letter-spacing: 3px;
@@ -83,52 +108,59 @@
         .banner h1 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 800;
-            margin: 18px 0;
+            margin: 20px 0;
         }
 
         .banner p {
             max-width: 650px;
             margin: auto;
-            color: #ddd;
+            color: #ccc;
             font-size: 1.15rem;
         }
 
+        /* BOTÕES */
+
         .btn-instituto {
             display: inline-block;
-            padding: 13px 27px;
+            padding: 13px 28px;
             background: var(--vermelho);
             color: white;
             border: 2px solid var(--vermelho);
             border-radius: 7px;
             font-weight: 700;
-            transition: .2s;
             text-decoration: none;
+            transition: .25s;
         }
 
         .btn-instituto:hover {
-            background: #a91c2b;
-            border-color: #a91c2b;
+            background: var(--vermelho-hover);
+            border-color: var(--vermelho-hover);
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
+
+        /* SEÇÕES */
 
         .secao {
             padding: 85px 0;
+            background: var(--preto);
         }
 
         .titulo-secao {
-            font-weight: 800;
             font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 25px;
             padding-left: 18px;
             border-left: 5px solid var(--vermelho);
         }
 
         .descricao {
+            color: #c5c5c5;
             font-size: 1.05rem;
             line-height: 1.9;
-            color: #505050;
         }
+
+        /* IMAGEM */
 
         .imagem-instituto {
             display: block;
@@ -136,18 +168,26 @@
             height: 450px;
             object-fit: cover;
             border-radius: 12px;
-            box-shadow: 0 12px 35px rgba(0,0,0,.12);
+            border: 1px solid #333;
+            box-shadow: 0 12px 35px rgba(0,0,0,.5);
         }
+
+        /* CARTÃO */
 
         .destaque {
-            background: white;
+            background: var(--cartao);
             padding: 38px;
             border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0,0,0,.055);
+            border: 1px solid var(--borda);
+            box-shadow: 0 8px 30px rgba(0,0,0,.2);
         }
 
+        /* HISTÓRIA */
+
         .historia {
-            background: white;
+            background: var(--escuro);
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
         }
 
         .historia-conteudo {
@@ -158,13 +198,20 @@
         .historia-detalhe {
             margin-top: 30px;
             padding: 22px;
-            background: #f8f8f8;
+            background: #252525;
             border-left: 4px solid var(--vermelho);
             border-radius: 5px;
         }
 
+        .historia-detalhe p {
+            color: #ccc;
+            margin: 0;
+        }
+
+        /* CONTATO */
+
         .contato {
-            background: #eee;
+            background: #151515;
             text-align: center;
         }
 
@@ -173,8 +220,16 @@
             font-weight: 800;
         }
 
+        .contato p {
+            color: var(--cinza);
+            margin: 15px auto 25px;
+        }
+
+        /* RODAPÉ */
+
         footer {
-            background: var(--preto);
+            background: #080808;
+            border-top: 2px solid var(--vermelho);
             color: white;
             padding: 45px 0 20px;
         }
@@ -184,16 +239,17 @@
         }
 
         .footer-descricao {
-            color: #aaa;
+            color: #999;
         }
 
         footer a {
-            color: #ddd;
+            color: #ccc;
             text-decoration: none;
+            transition: .2s;
         }
 
         footer a:hover {
-            color: #ed4658;
+            color: var(--vermelho);
         }
 
         .footer-links {
@@ -206,23 +262,36 @@
         .copyright {
             padding-top: 20px;
             margin-top: 30px;
-            border-top: 1px solid #383838;
+            border-top: 1px solid #292929;
             text-align: center;
-            color: #999;
+            color: #888;
             font-size: .9rem;
         }
 
+        /* ACESSIBILIDADE */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #ff6878;
+            outline-offset: 4px;
+        }
+
+        /* RESPONSIVIDADE */
+
         @media (max-width: 991px) {
+
             .navbar-nav {
                 padding-top: 15px;
             }
 
             .banner {
-                padding: 85px 15px;
+                padding: 90px 15px;
             }
+
         }
 
         @media (max-width: 767px) {
+
             .secao {
                 padding: 55px 0;
             }
@@ -232,7 +301,7 @@
             }
 
             .banner h1 {
-                font-size: 2.25rem;
+                font-size: 2.2rem;
             }
 
             .banner p {
@@ -256,6 +325,7 @@
                 justify-content: center;
                 margin-top: 25px;
             }
+
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -266,13 +336,18 @@
                 transition-duration: .01ms !important;
             }
         }
+
     </style>
+
 </head>
 
 <body>
 
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Menu principal">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top"
+         aria-label="Menu principal">
+
         <div class="container">
 
             <a class="navbar-brand" href="#inicio">
@@ -286,31 +361,44 @@
                     aria-controls="menu"
                     aria-expanded="false"
                     aria-label="Abrir menu">
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
+
                 <ul class="navbar-nav ms-auto">
+
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">Início</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#historia">História</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#contato">Contato</a>
                     </li>
+
                 </ul>
+
             </div>
 
         </div>
+
     </nav>
 
+
     <!-- BANNER -->
+
     <header class="banner" id="inicio">
+
         <div class="container">
 
             <span class="banner-tag">
@@ -329,17 +417,22 @@
             </a>
 
         </div>
+
     </header>
+
 
     <main>
 
         <!-- SOBRE -->
+
         <section class="secao" id="sobre">
+
             <div class="container">
 
                 <div class="row align-items-center g-5">
 
                     <div class="col-lg-6">
+
                         <img
                             src="Leonel-Brizola2.png"
                             alt="Retrato de Leonel de Moura Brizola"
@@ -348,9 +441,11 @@
                             height="900"
                             loading="lazy"
                             decoding="async">
+
                     </div>
 
                     <div class="col-lg-6">
+
                         <div class="destaque">
 
                             <h2 class="titulo-secao">
@@ -358,6 +453,7 @@
                             </h2>
 
                             <p class="descricao">
+
                                 Bem-vindo ao Instituto Leonel Brizola!
 
                                 O Instituto Leonel Brizola é uma
@@ -366,6 +462,7 @@
                                 continuidade ao trabalho político de
                                 Leonel Brizola, fomentando debates e
                                 pesquisas para tornar o Brasil mais próspero.
+
                             </p>
 
                             <a href="#historia" class="btn-instituto mt-2">
@@ -373,15 +470,20 @@
                             </a>
 
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
+
         <!-- HISTÓRIA -->
+
         <section class="secao historia" id="historia">
+
             <div class="container">
 
                 <div class="historia-conteudo">
@@ -391,6 +493,7 @@
                     </h2>
 
                     <p class="descricao">
+
                         Leonel de Moura Brizola, nascido em 1922
                         em Carazinho, no Rio Grande do Sul, foi
                         engenheiro civil e político brasileiro,
@@ -402,24 +505,31 @@
                         Grande do Sul, sendo o único político eleito
                         pelo povo para governar dois estados
                         diferentes na história do Brasil.
+
                     </p>
 
                     <div class="historia-detalhe">
+
                         <p>
                             <strong>Legado:</strong>
                             A trajetória de Leonel Brizola permanece
                             como parte importante da história política
                             brasileira.
                         </p>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
+
         <!-- CONTATO -->
+
         <section class="secao contato" id="contato">
+
             <div class="container">
 
                 <h2>Entre em contato</h2>
@@ -434,17 +544,22 @@
                 </a>
 
             </div>
+
         </section>
 
     </main>
 
+
     <!-- RODAPÉ -->
+
     <footer>
+
         <div class="container">
 
             <div class="row align-items-center">
 
                 <div class="col-md-6 text-center text-md-start">
+
                     <h3 class="footer-titulo">
                         Instituto Leonel Brizola
                     </h3>
@@ -452,27 +567,37 @@
                     <p class="footer-descricao mb-0">
                         História, memória e compromisso com o Brasil.
                     </p>
+
                 </div>
 
                 <div class="col-md-6">
-                    <nav class="footer-links" aria-label="Links do rodapé">
+
+                    <nav class="footer-links"
+                         aria-label="Links do rodapé">
+
                         <a href="#sobre">Sobre</a>
                         <a href="#historia">História</a>
                         <a href="/contatos">Contato</a>
+
                     </nav>
+
                 </div>
 
             </div>
 
             <div class="copyright">
+
                 <p class="mb-0">
                     © 2026 Instituto Leonel Brizola.
                     Todos os direitos reservados.
                 </p>
+
             </div>
 
         </div>
+
     </footer>
+
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
